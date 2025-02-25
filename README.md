@@ -32,3 +32,20 @@ This boilerplate helps you save time and effort by providing a solid foundation 
 * Javascript
 * PHP
 * Laravel
+
+## Installation
+
+Install or update composer
+
+```bash
+  composer install
+```
+```bash
+  composer update
+```
+
+## Run Project
+
+```bash
+  php artisan serve
+```
