@@ -6,6 +6,8 @@ This Laravel API Boilerplate is designed to kickstart your next project with ess
 
 - [About](#user-content-beginner-about)
 - [Tech Stack](#user-content-️-tech-stack)
+- [Installation](#user-content-️-installation)
+- [Run Project](#user-content--run-project)
 
 ##  :beginner: About
 
@@ -33,7 +35,7 @@ This boilerplate helps you save time and effort by providing a solid foundation 
 * PHP
 * Laravel
 
-## Installation
+## ⚙️ Installation
 
 Install or update composer
 
@@ -44,7 +46,7 @@ Install or update composer
   composer update
 ```
 
-## Run Project
+## 🚀 Run Project
 
 ```bash
   php artisan serve
