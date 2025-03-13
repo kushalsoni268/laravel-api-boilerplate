@@ -8,6 +8,7 @@ This Laravel API Boilerplate is designed to kickstart your next project with ess
 - [Tech Stack](#user-content-️-tech-stack)
 - [Installation](#user-content-️-installation)
 - [Run Project](#user-content--run-project)
+- [Resources](#user-content-page_facing_up-resources)
 
 ##  :beginner: About
 
@@ -51,3 +52,9 @@ Install or update composer
 ```bash
   php artisan serve
 ```
+
+##  :page_facing_up: Resources
+
+Download the Postman collection file from the following link to test the API endpoints.
+
+- [https://github.com/kushalsoni268/laravel-api-boilerplate/blob/main/laravel-api-boilerplate.postman_collection.json](https://github.com/kushalsoni268/laravel-api-boilerplate/blob/main/laravel-api-boilerplate.postman_collection.json)

@@ -1,0 +1,646 @@
+{
+	"info": {
+		"_postman_id": "de7f7a43-c36b-4ffe-8eaa-3b912a882668",
+		"name": "laravel-api-boilerplate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29803690"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "User11",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "User11@yopmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "User@123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"    pm.test(\"Status code is 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"",
+									"        var jsonData = pm.response.json();",
+									"        pm.environment.set(\"token\", jsonData.data.token);",
+									"    });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "User2@yopmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "User@123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot-Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "user1@yopmail.com",
+									"description": "user1@yopmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/forgot-password",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get-Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/get-profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"get-profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update-Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "User2",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "user2@yopmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/update-profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"update-profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update-Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "current_password",
+									"value": "User@123",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "User@123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/update-password",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"update-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete-Account",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/delete-account",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"delete-account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store-Login-Device-Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "device_name",
+									"value": "iPhone",
+									"type": "text"
+								},
+								{
+									"key": "platform",
+									"value": "ios",
+									"description": "android, ios, web",
+									"type": "text"
+								},
+								{
+									"key": "device_id",
+									"value": "B80E7D0B-7912-4D84-8757-8EA9110C2EA1",
+									"type": "text"
+								},
+								{
+									"key": "push_token",
+									"value": "f5UH7OXvw0DWiLWV7TbXmi:APA91bFpF7Sn9yamuqVfe99RLMZo2m6VzQXIFTEK6eSrMnNlzTXAfAQcuc88nuyGr5TSCKOAHXtYHrKJV8CCoJrk2nMbyxDmsT1Fp1SuxEsohzC0Fg_aOOV73qtrTTxkSZXLAd2iKbzH",
+									"type": "text"
+								},
+								{
+									"key": "app_version",
+									"value": "1.2.0",
+									"type": "text"
+								},
+								{
+									"key": "os_version",
+									"value": "3.2.0",
+									"type": "text"
+								},
+								{
+									"key": "time_zone",
+									"value": "IST",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/store-login-device-details",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"store-login-device-details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User-List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/userlist",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"userlist"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notification",
+			"item": [
+				{
+					"name": "Send-Push-Notification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"device_token\":\"fA_d65M8QcGMcAPI7h9R-O:APA91bGKV2KTmYQcQsE6xpTf2T-mFduXPVHqJZ6zpPVnpPbJd8f6SbKua3cRxEmmV2ATpjV5ra3YkWNWa-xmh9_lQ3HS8pKCCRCWdqSWmiXIhVL0sui_gonWD96W9kwyVzSOA9kX_ESB\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/send-push-notification",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"send-push-notification"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send-Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/send-email",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"send-email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send-Email-With-Different-Content",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/send-email-with-different-content",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"send-email-with-different-content"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "File-Upload",
+			"item": [
+				{
+					"name": "Upload-File-Local-Storage",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/home/ubuntu50/Pictures/img-1.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/upload-file-local-storage",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"upload-file-local-storage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload-Files-Local-Storage",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file[]",
+									"type": "file",
+									"src": [
+										"/home/ubuntu50/Pictures/img-2.jpeg",
+										"/home/ubuntu50/Pictures/img-1.jpeg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/upload-files-local-storage",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"upload-files-local-storage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload-File-AWS-S3 Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/home/ubuntu50/Pictures/img-2.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/upload-file-aws-s3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"upload-file-aws-s3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate-Presigned-URL",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file_path",
+									"value": "upload/File-1703141591.jpg",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/generate-presigned-url",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"generate-presigned-url"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Laravel",
+			"item": [
+				{
+					"name": "Optimize-Clear",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/optimize-clear",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"optimize-clear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Storage-Link",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/storage-link",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"storage-link"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
