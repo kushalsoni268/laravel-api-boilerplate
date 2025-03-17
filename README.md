@@ -9,6 +9,7 @@ This Laravel API Boilerplate is designed to kickstart your next project with ess
 - [Installation](#user-content-️-installation)
 - [Run Project](#user-content--run-project)
 - [Resources](#user-content-page_facing_up-resources)
+- [Acknowledgements](#user-content-gem-acknowledgements)
 
 ##  :beginner: About
 
@@ -58,3 +59,14 @@ Install or update composer
 Download the Postman collection file from the following link to test the API endpoints.
 
 - [https://github.com/kushalsoni268/laravel-api-boilerplate/blob/main/laravel-api-boilerplate.postman_collection.json](https://github.com/kushalsoni268/laravel-api-boilerplate/blob/main/laravel-api-boilerplate.postman_collection.json)
+
+
+## :gem: Acknowledgements
+
+Useful resources and libraries that we have used in this project.
+
+- Laravel Restful API: [https://www.itsolutionstuff.com/post/build-restful-api-in-laravel-58-exampleexample.html](https://www.itsolutionstuff.com/post/build-restful-api-in-laravel-58-exampleexample.html)
+
+- Laravel Restful API With Swagger: [https://sathyaventhan.medium.com/laravel-secure-rest-api-with-swagger-26050dafa55](https://sathyaventhan.medium.com/laravel-secure-rest-api-with-swagger-26050dafa55)
+
+- Laravel Send Mail Using Queue: [https://raviyatechnical.medium.com/how-to-send-mail-using-queue-in-laravel-218075c4a6b6](https://raviyatechnical.medium.com/how-to-send-mail-using-queue-in-laravel-218075c4a6b6)
